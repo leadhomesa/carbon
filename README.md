@@ -1,7 +1,7 @@
 ![Carbon Logo](https://i.imgur.com/JX6nZks.png)
-# Leadhome react starter boiler plate
+# Leadhome react starter boilerplate
 
-### Libraries used
+### Features
 
 - Parcel
 - Emotion
