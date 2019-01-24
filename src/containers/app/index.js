@@ -12,8 +12,6 @@ import NotFound from 'containers/not-found';
 import Nav from 'components/nav';
 
 const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,700,700i');
-  
   * {
     box-sizing: border-box;
   }
