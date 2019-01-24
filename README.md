@@ -12,6 +12,7 @@
 
 ### Getting Started
 ```
+cp sample.env .env
 npm install
 ```
 

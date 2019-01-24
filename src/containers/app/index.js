@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react';
-import { Global, css } from '@emotion/core';
-import styled from '@emotion/styled';
+import styled, { createGlobalStyle } from 'styled-components';
 import Switch from 'react-router-dom/Switch';
 import Route from 'react-router-dom/Route';
 import { breakpoints, pxtorem } from 'styles';
@@ -10,9 +9,11 @@ import Home from 'containers/home';
 import NotFound from 'containers/not-found';
 
 // components
-import Nav from 'components/Nav';
+import Nav from 'components/nav';
 
-const globalStyles = css`
+const GlobalStyle = createGlobalStyle`
+  @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,700,700i');
+  
   * {
     box-sizing: border-box;
   }
@@ -23,7 +24,7 @@ const globalStyles = css`
   }
 `;
 
-const Container = styled('div')`
+const Container = styled.div`
   max-width: ${pxtorem(breakpoints.large)};
   margin: 0 auto;
 
@@ -34,7 +35,7 @@ const Container = styled('div')`
 
 const App = () => (
   <Fragment>
-    <Global styles={globalStyles} />
+    <GlobalStyle />
     <Nav />
     <Container>
       <Switch>
