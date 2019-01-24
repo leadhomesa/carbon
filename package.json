@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "parcel ./src/index.html -d build/ -p 3000 --no-autoinstall",
+    "prebuild": "npm run clean",
     "build": "parcel build src/index.html -d build/",
     "postbuild": "react-snap",
-    "clean": "rimraf build && rimraf .cache",
-    "clean-and-build": "npm-run-all clean build"
+    "clean": "rimraf build && rimraf .cache"
   },
   "keywords": [
     "React",
@@ -24,8 +24,6 @@
   "author": "Leadhome",
   "license": "MIT",
   "dependencies": {
-    "@emotion/core": "^10.0.6",
-    "@emotion/styled": "^10.0.6",
     "acorn": "^6.0.5",
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
