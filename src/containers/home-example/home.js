@@ -1,7 +1,7 @@
 import React from 'react';
 
 // components
-import { StyledLink } from './styled';
+import { StyledLink } from './style';
 
 const Home = () => (
   <div>

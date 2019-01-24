@@ -2,14 +2,14 @@ import React, { Fragment } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 import Switch from 'react-router-dom/Switch';
 import Route from 'react-router-dom/Route';
-import { breakpoints, pxtorem } from 'styles';
+import { breakpoints, pxtorem } from 'styles/index-example';
 
 // containers
-import Home from 'containers/home';
-import NotFound from 'containers/not-found';
+import Home from 'containers/home-example';
+import NotFound from 'containers/not-found-example';
 
 // components
-import Nav from 'components/nav';
+import Nav from 'components/nav-example';
 
 const GlobalStyle = createGlobalStyle`
   * {

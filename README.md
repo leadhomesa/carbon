@@ -32,3 +32,4 @@ npm run clean-and-build
 ### IDE Config
 ##### Webstorm
 1. Right click on src -> Mark directory as -> Resource Root.
+2. After first build: Right click on build -> Mark directory as -> Excluded.

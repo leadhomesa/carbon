@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Link from 'react-router-dom/Link';
-import { colors, pxtorem } from 'styles';
+import { colors, pxtorem } from 'styles/index-example';
 
 export const StyledNav = styled.div`
   height: ${pxtorem(70)};
