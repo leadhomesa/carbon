@@ -28,3 +28,7 @@ npm run build
 OR
 npm run clean-and-build
 ```
+
+### IDE Config
+##### Webstorm
+1. Right click on src -> Mark directory as -> Resource Root.
