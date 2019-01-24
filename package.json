@@ -6,6 +6,7 @@
   "scripts": {
     "start": "parcel ./src/index.html -d build/ -p 3000 --no-autoinstall",
     "build": "parcel build src/index.html -d build/",
+    "postbuild": "react-snap",
     "clean": "rimraf build && rimraf .cache",
     "clean-and-build": "npm-run-all clean build"
   },
@@ -57,6 +58,7 @@
     "npm-run-all": "^4.1.5",
     "parcel-bundler": "^1.11.0",
     "prettier": "^1.16.0",
+    "react-snap": "^1.23.0",
     "rimraf": "^2.6.3"
   }
 }
