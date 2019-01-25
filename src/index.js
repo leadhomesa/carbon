@@ -17,7 +17,7 @@ const renderApp = TheApp => {
   // hydrate the client if dom is already rendered with react-snap
   // only hydrates if you run the build script and host the static files somewhere
   return (
-    (rootElement.hasChildNodes && hydrate(CarbonApp, rootElement)) ||
+    (rootElement.hasChildNodes() && hydrate(CarbonApp, rootElement)) ||
     render(CarbonApp, rootElement)
   );
 };
