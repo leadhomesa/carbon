@@ -16,9 +16,6 @@
     "Boilerplate",
     "Styled Components"
   ],
-  "pre-commit": [
-    "lint"
-  ],
   "alias": {
     "containers": "./src/containers",
     "components": "./src/components",
