@@ -49,7 +49,7 @@ License
 -------
 
 Carbon is © 2019 Leadhome Pty Ltd.
-It is free software, and may be redistributed under the terms specified in the [LICENSE] file.
+It is free software, and may be redistributed under the terms specified in the [LICENSE](LICENSE.md) file.
 
 Maintained by
 ----------------
