@@ -1,0 +1,13 @@
+module.exports = [
+  ["use-babel-config",
+  {
+    "presets": [
+      "react-app"
+    ],
+    "plugins": [
+      "babel-plugin-styled-components",
+      "@babel/plugin-proposal-optional-chaining"
+    ]
+  }],
+  ["use-eslint-config", ".eslintrc"],
+]
