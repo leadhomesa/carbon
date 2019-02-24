@@ -3,7 +3,7 @@
 A super simple React boilerplate.
 
 ## Features
-- Parcel
+- Webpack 4
 - Styled Components
 - HMR
 - ESLint

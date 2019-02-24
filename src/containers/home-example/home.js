@@ -6,8 +6,8 @@ import { StyledLink } from './style';
 
 const Home = () => (
   <div>
-    <Helmet title='Carbon - Hello Parcel!' />
-    <h1>Hello Parcel!</h1>
+    <Helmet title='Carbon - Hello World!' />
+    <h1>Hello World!</h1>
     <StyledLink to='/abcd'>Broken link</StyledLink>
   </div>
 );

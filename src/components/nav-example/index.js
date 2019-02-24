@@ -1,11 +1,12 @@
 import React from 'react';
 
 // components
-import { StyledNav, StyledLink } from './styled';
+import { StyledNav, StyledLink, StyledIcon } from './styled';
 
 const Nav = () => (
   <StyledNav>
-    <StyledLink to='/'>React Starter</StyledLink>
+    <StyledIcon />
+    <StyledLink to='/'>Carbon</StyledLink>
   </StyledNav>
 );
 
