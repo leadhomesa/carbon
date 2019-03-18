@@ -11,7 +11,11 @@ module.exports = Object.assign(
       hot: true,
       port,
       proxy: {
-        '/api': process.env.API_URL || '/api'
+        '/api': {
+          target: process.env.API_URL || '/api/',
+          secure: false,
+          changeOrigin: true
+        }
       },
       writeToDisk: true,
       overlay: true,
