@@ -1,5 +1,7 @@
 ![Carbon Logo](https://i.imgur.com/JX6nZks.png)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/leadhomesa/carbon.svg)](https://greenkeeper.io/)
+
 A super simple React boilerplate.
 
 ## Features
