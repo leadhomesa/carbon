@@ -3,7 +3,6 @@ import { hydrate, render } from 'react-dom';
 import BrowserRouter from 'react-router-dom/BrowserRouter';
 
 import App from 'containers/app';
-import { register, unregister } from './sw';
 
 const supportsHistory = 'pushState' in window.history;
 const rootElement = document.getElementById('root');
@@ -30,5 +29,15 @@ if (module.hot)
 
 renderApp(App);
 
-if (process.env.NODE_ENV === 'production') register();
-else unregister();
+// service worker bit
+if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator)
+  window.addEventListener('load', () => {
+    navigator.serviceWorker
+      .register('/sw.js')
+      .then(registration => {
+        console.log('SW registered: ', registration);
+      })
+      .catch(registrationError => {
+        console.log('SW registration failed: ', registrationError);
+      });
+  });

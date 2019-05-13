@@ -1,11 +1,16 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
+const WorkboxPlugin = require('workbox-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 const alias = require('./alias');
+
+const assetsFolder = path.join(__dirname, '..', 'src', 'assets');
+const buildFolder = path.join(__dirname, '..', 'build');
 
 module.exports = {
   entry: './src/index.js',
   output: {
-    path: path.join(__dirname, '..', 'build'),
+    path: buildFolder,
     filename: '[name].bundle.js',
     chunkFilename: '[name].bundle.js'
   },
@@ -30,9 +35,14 @@ module.exports = {
     alias
   },
   plugins: [
+    new CopyWebpackPlugin([{ from: assetsFolder, to: buildFolder }]),
     new HtmlWebPackPlugin({
-      favicon: './src/assets/favicon.ico',
       template: './src/index.html'
+    }),
+    new WorkboxPlugin.GenerateSW({
+      swDest: 'sw.js',
+      clientsClaim: true,
+      skipWaiting: true
     })
   ]
 };

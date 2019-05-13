@@ -19,6 +19,9 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     font-family: 'Source Sans Pro', sans-serif;
+    /* Native apps doesn't allow text selection, so mobile PWAs shouldn't. */
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
   }
 `;
 
