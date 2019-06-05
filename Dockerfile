@@ -1,17 +1,20 @@
 FROM node:alpine as build
 
-# puppeteer + chromium download inside docker is a bit of a mission
-RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories
+# Installs latest Chromium (73) package.
 RUN apk update && apk upgrade && \
-  echo @edge http://nl.alpinelinux.org/alpine/edge/community >> /etc/apk/repositories && \
-  echo @edge http://nl.alpinelinux.org/alpine/edge/main >> /etc/apk/repositories
-RUN apk add --no-cache nss@edge
-RUN apk add --no-cache chromium@edge
+    echo @edge http://nl.alpinelinux.org/alpine/edge/community >> /etc/apk/repositories && \
+    echo @edge http://nl.alpinelinux.org/alpine/edge/main >> /etc/apk/repositories && \
+    apk add --no-cache \
+      chromium@edge=~73.0.3683.103 \
+      nss@edge \
+      freetype@edge \
+      harfbuzz@edge \
+      ttf-freefont@edge
 
 # skip chromium download as we did that manually
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
 WORKDIR /app
-RUN npm install puppeteer@1.14.0
+RUN npm install puppeteer@1.12.0
 
 # add package json and install deps
 ADD package.json ./
