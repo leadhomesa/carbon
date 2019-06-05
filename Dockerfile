@@ -20,7 +20,7 @@ RUN npm install
 ADD . ./
 
 # set all env vars now after deps have been installed, but before the build.
-ARG PUBLIC_URL=/
+ARG PUBLIC_URL=
 ARG VERSION=0.0.0
 
 ENV PUBLIC_URL=${PUBLIC_URL}
