@@ -7,6 +7,7 @@ import { breakpoints, pxtorem } from 'styles/index-example';
 // containers
 import Home from 'containers/home-example';
 import NotFound from 'containers/not-found-example';
+import Health from 'containers/health';
 
 // components
 import Nav from 'components/nav-example';
@@ -41,6 +42,7 @@ const App = () => (
     <Container>
       <Switch>
         <Route path='/' component={Home} exact />
+        <Route path='/health' component={Health} exact />
         <Route component={NotFound} />
       </Switch>
     </Container>

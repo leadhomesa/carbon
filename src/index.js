@@ -4,12 +4,12 @@ import BrowserRouter from 'react-router-dom/BrowserRouter';
 
 import App from 'containers/app';
 
-const publicUrl = process.env.PUBLIC_URL || '';
+const publicUrl = process.env.PUBLIC_URL || '/';
 const supportsHistory = 'pushState' in window.history;
 const rootElement = document.getElementById('root');
 const renderApp = TheApp => {
   const CarbonApp = (
-    <BrowserRouter forceRefresh={!supportsHistory}>
+    <BrowserRouter basename={publicUrl} forceRefresh={!supportsHistory}>
       <TheApp />
     </BrowserRouter>
   );
@@ -34,7 +34,7 @@ renderApp(App);
 if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator)
   window.addEventListener('load', () => {
     navigator.serviceWorker
-      .register(`${publicUrl}/sw.js`)
+      .register(`${publicUrl}sw.js`)
       .then(registration => {
         console.log('SW registered: ', registration);
       })
