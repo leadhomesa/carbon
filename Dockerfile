@@ -14,7 +14,7 @@ RUN apk update && apk upgrade && \
 # skip chromium download as we did that manually
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
 WORKDIR /app
-RUN npm install puppeteer@1.12.0
+RUN npm install puppeteer@1.12.2
 
 # add package json and install deps
 ADD package.json ./
