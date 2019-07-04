@@ -60,7 +60,13 @@
     "webpack-dev-server": "^3.3.1"
   },
   "reactSnap": {
-    "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"],
-    "puppeteerExecutablePath": "/opt/google/chrome/google-chrome"
+    "puppeteerArgs": [
+      "--disable-setuid-sandbox",
+      "--no-sandbox"
+    ],
+    "inlineCss": false,
+    "cacheAjaxRequests": true,
+    "skipThirdPartyRequests": true,
+    "puppeteerExecutablePath": "/usr/bin/chromium-browser"
   }
 }
