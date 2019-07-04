@@ -64,9 +64,6 @@
       "--disable-setuid-sandbox",
       "--no-sandbox"
     ],
-    "inlineCss": false,
-    "cacheAjaxRequests": true,
-    "skipThirdPartyRequests": true,
     "puppeteerExecutablePath": "/usr/bin/chromium-browser"
   }
 }
