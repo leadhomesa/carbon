@@ -31,8 +31,7 @@
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.0",
     "react-router-dom": "^4.3.1",
-    "styled-components": "^4.2.0",
-    "workbox-webpack-plugin": "^4.3.1"
+    "styled-components": "^4.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
@@ -57,7 +56,8 @@
     "rimraf": "^2.6.3",
     "webpack": "4.28.4",
     "webpack-cli": "^3.3.0",
-    "webpack-dev-server": "^3.3.1"
+    "webpack-dev-server": "^3.3.1",
+    "workbox-webpack-plugin": "^4.3.1"
   },
   "reactSnap": {
     "puppeteerArgs": [
