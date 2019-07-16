@@ -1,6 +1,7 @@
 require('dotenv').config();
 const config = require('./config');
 
+const publicPath = process.env.PUBLIC_URL || '/';
 const port = process.env.PORT || 3000;
 
 module.exports = Object.assign(
@@ -19,7 +20,7 @@ module.exports = Object.assign(
       },
       writeToDisk: true,
       overlay: true,
-      publicPath: `http://localhost:${port}/`,
+      publicPath: `http://localhost:${port}${publicPath}`,
       historyApiFallback: true
     }
   },

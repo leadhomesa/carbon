@@ -34,7 +34,7 @@ renderApp(App);
 if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator)
   window.addEventListener('load', () => {
     navigator.serviceWorker
-      .register(`${publicUrl}sw.js`)
+      .register(`sw.js`)
       .then(registration => {
         console.log('SW registered: ', registration);
       })

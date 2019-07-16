@@ -5,7 +5,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 const alias = require('./alias');
 
-const publicPath = process.env.PUBLIC_URL || '';
+const publicPath = process.env.PUBLIC_URL || '/';
 const assetsFolder = path.join(__dirname, '..', 'src', 'assets');
 const buildFolder = path.join(__dirname, '..', 'build');
 
