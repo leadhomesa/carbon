@@ -2,15 +2,15 @@ import React, { Fragment } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 import Switch from 'react-router-dom/Switch';
 import Route from 'react-router-dom/Route';
-import { breakpoints, pxtorem } from 'styles/index-example';
+import { breakpoints } from 'styles/index';
 
 // containers
-import Home from 'containers/home-example';
-import NotFound from 'containers/not-found-example';
+import Home from 'containers/home';
+import NotFound from 'containers/not-found';
 import Health from 'containers/health';
 
 // components
-import Nav from 'components/nav-example';
+import Nav from 'components/nav';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -27,11 +27,12 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const Container = styled.div`
-  max-width: ${pxtorem(breakpoints.large)};
+  max-width: ${breakpoints.large}px;
+  padding: 0 1rem;
   margin: 0 auto;
 
-  @media (max-width: ${pxtorem(breakpoints.large)}) {
-    padding: 0 1rem;
+  @media (min-width: ${breakpoints.large}px) {
+    padding: 0;
   }
 `;
 

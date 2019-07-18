@@ -1,6 +1,6 @@
 export const breakpoints = {
   xs: 320,
-  small: 767,
+  small: 768,
   medium: 1024,
   large: 1280
 };
@@ -12,5 +12,3 @@ export const colors = {
   storm: '#51516F',
   gallery: '#EEEEEE'
 };
-
-export const pxtorem = px => `${px / 16}rem`;
