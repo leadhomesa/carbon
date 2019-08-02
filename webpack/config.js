@@ -5,7 +5,6 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 const alias = require('./alias');
 
-const publicPath = process.env.PUBLIC_URL || '/';
 const assetsFolder = path.join(__dirname, '..', 'src', 'assets');
 const buildFolder = path.join(__dirname, '..', 'build');
 
@@ -30,6 +29,10 @@ module.exports = {
       {
         test: /\.svg$/,
         use: ['@svgr/webpack', 'file-loader']
+      },
+      {
+        test: /\.html$/,
+        use: ['html-loader']
       }
     ]
   },
@@ -39,8 +42,7 @@ module.exports = {
   plugins: [
     new CopyWebpackPlugin([{ from: assetsFolder, to: buildFolder }]),
     new HtmlWebPackPlugin({
-      template: './src/index.html',
-      publicPath
+      template: './src/index.html'
     }),
     new WorkboxPlugin.GenerateSW({
       swDest: 'sw.js',

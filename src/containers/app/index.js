@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
-import Switch from 'react-router-dom/Switch';
-import Route from 'react-router-dom/Route';
+import { Switch, Route } from 'react-router-dom';
 import { breakpoints } from 'styles/index';
 
 // containers

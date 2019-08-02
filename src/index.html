@@ -1,6 +1,7 @@
-<html>
+<html lang="en">
   <head>
     <title>Carbon</title>
+    <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0, shrink-to-fit=no'>
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -10,7 +11,16 @@
     <meta name="msapplication-TileColor" content="#51516f">
     <meta name="theme-color" content="#51516f">
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,700,700i' rel='stylesheet'>
-    <base href='<%= htmlWebpackPlugin.options.publicPath %>'>
+    <base href='${PUBLIC_URL}'>
+    <script>
+      window.process = {
+        env: {
+          VERSION: '${VERSION}',
+          NODE_ENV: '${NODE_ENV}',
+          PUBLIC_URL: '${PUBLIC_URL}'
+        }
+      };
+    </script>
   </head>
   <body>
     <div id='root'></div>
