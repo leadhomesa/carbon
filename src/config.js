@@ -4,6 +4,6 @@ const parseConfig = field => {
   return value;
 };
 
-export const NODE_ENV = parseConfig('NODE_ENV');
+export const NODE_ENV = parseConfig('NODE_ENV') || 'development';
 export const VERSION = parseConfig('VERSION') || '0.0.0';
 export const PUBLIC_URL = parseConfig('PUBLIC_URL') || '/';
