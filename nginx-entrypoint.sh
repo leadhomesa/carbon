@@ -1,7 +1,5 @@
-envsubst '${API_URL}${PUBLIC_URL}' < /etc/nginx/nginx.conf.template > /etc/nginx/nginx.conf
-
-# Replace env vars in html template -- if any
-cp /usr/share/nginx/html/index.html /usr/share/nginx/html/index.template.html
-envsubst < /usr/share/nginx/html/index.html > /usr/share/nginx/html/index.html
+#! /bin/sh
+envsubst '${API_URL}${WP_URL}${PUBLIC_URL}' < /etc/nginx/nginx.conf.template > /etc/nginx/nginx.conf
+envsubfolder /usr/share/nginx/html
 
 exec nginx -g 'daemon off;'

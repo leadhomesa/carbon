@@ -1,21 +1,18 @@
 FROM leadhome/react-snap-base-image:1 as build
+ENV NODE_ENV=production
+ARG VERSION=0.0.0
+ENV VERSION=${VERSION}
+
 USER root
 WORKDIR /app
 ADD package*.json ./
 RUN npm install
 ADD . ./
-
-# set all env vars now after deps have been installed, but before the build.
-ARG PUBLIC_URL=
-ARG VERSION=0.0.0
-
-ENV PUBLIC_URL=${PUBLIC_URL}
-ENV VERSION=${VERSION}
-ENV NODE_ENV=production
-
 RUN npm run build
 
-FROM nginx:alpine as runtime
+FROM docker.io/leadhome/nginx-node-alpine-base-image:1.0.7 as runtime
+ARG VERSION=0.0.0
+ENV VERSION=${VERSION}
 COPY --from=build /app/build/ /usr/share/nginx/html/
 
 ADD ./nginx-entrypoint.sh /nginx-entrypoint.sh

@@ -1,6 +1,5 @@
 import React from 'react';
-
-const VERSION = process.env.VERSION || '0.0.0';
+import { VERSION } from 'config';
 
 const Health = () => <h1>{VERSION}</h1>;
 

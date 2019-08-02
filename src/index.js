@@ -1,15 +1,15 @@
 import React from 'react';
 import { hydrate, render } from 'react-dom';
-import BrowserRouter from 'react-router-dom/BrowserRouter';
+import { BrowserRouter } from 'react-router-dom';
+import { PUBLIC_URL, NODE_ENV } from 'config';
 
 import App from 'containers/app';
 
-const publicUrl = process.env.PUBLIC_URL || '/';
 const supportsHistory = 'pushState' in window.history;
 const rootElement = document.getElementById('root');
 const renderApp = TheApp => {
   const CarbonApp = (
-    <BrowserRouter basename={publicUrl} forceRefresh={!supportsHistory}>
+    <BrowserRouter basename={PUBLIC_URL} forceRefresh={!supportsHistory}>
       <TheApp />
     </BrowserRouter>
   );
@@ -31,7 +31,7 @@ if (module.hot)
 renderApp(App);
 
 // service worker bit
-if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator)
+if (NODE_ENV === 'production' && 'serviceWorker' in navigator)
   window.addEventListener('load', () => {
     navigator.serviceWorker
       .register(`sw.js`)

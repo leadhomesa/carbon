@@ -1,5 +1,6 @@
 require('dotenv').config();
 const config = require('./config');
+const webpack = require('webpack');
 
 const publicPath = process.env.PUBLIC_URL || '/';
 const port = process.env.PORT || 3000;
@@ -16,6 +17,12 @@ module.exports = Object.assign(
           target: process.env.API_URL || '/api/',
           secure: false,
           changeOrigin: true
+        },
+        '/wp': {
+          target: process.env.WP_URL || '/wp/',
+          secure: false,
+          changeOrigin: true,
+          pathRewrite: { '^/wp': '' }
         }
       },
       writeToDisk: true,
@@ -24,5 +31,13 @@ module.exports = Object.assign(
       historyApiFallback: true
     }
   },
-  config
+  config,
+  {
+    plugins: [
+      new webpack.DefinePlugin({
+        'window.process.env': JSON.stringify(process.env)
+      }),
+      ...config.plugins
+    ]
+  }
 );
