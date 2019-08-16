@@ -9,7 +9,7 @@ A super simple React boilerplate.
 - Styled Components
 - HMR
 - ESLint
-- Pretter
+- Prettier
 - PWA ready
 - Pre-rendered HTML for production builds (No SSR -- Controversial, we know)
 
