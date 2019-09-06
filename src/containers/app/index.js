@@ -1,15 +1,15 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, lazy, Suspense } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 import { Switch, Route } from 'react-router-dom';
 import { breakpoints } from 'styles/index';
 
-// containers
-import Home from 'containers/home';
+// components
+import Nav from 'components/nav';
 import NotFound from 'containers/not-found';
 import Health from 'containers/health';
 
-// components
-import Nav from 'components/nav';
+// containers
+const Home = lazy(() => import('containers/home'));
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -40,11 +40,13 @@ const App = () => (
     <GlobalStyle />
     <Nav />
     <Container>
-      <Switch>
-        <Route path='/' component={Home} exact />
-        <Route path='/health' component={Health} exact />
-        <Route component={NotFound} />
-      </Switch>
+      <Suspense fallback={<p>loading</p>}>
+        <Switch>
+          <Route path='/' component={Home} exact />
+          <Route path='/health' component={Health} exact />
+          <Route component={NotFound} />
+        </Switch>
+      </Suspense>
     </Container>
   </Fragment>
 );
