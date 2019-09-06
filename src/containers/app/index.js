@@ -3,13 +3,16 @@ import styled, { createGlobalStyle } from 'styled-components';
 import { Switch, Route } from 'react-router-dom';
 import { breakpoints } from 'styles/index';
 
+// helpers
+import retry from 'helpers/lazy-retry';
+
 // components
 import Nav from 'components/nav';
 import NotFound from 'containers/not-found';
 import Health from 'containers/health';
 
 // containers
-const Home = lazy(() => import('containers/home'));
+const Home = lazy(() => retry(import('containers/home')));
 
 const GlobalStyle = createGlobalStyle`
   * {
