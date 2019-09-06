@@ -1,3 +1,16 @@
 {
-    "extends": "@leadhome/eslint-config"
+    "extends": "@leadhome/eslint-config",
+    "settings": {
+      "import/resolver": {
+        "webpack": {
+          "config": "./webpack/config.js"
+        },
+        "node": {
+          "paths": ["node_modules", "src", "components", "config", "containers", "styles"]
+        }
+      }
+    },
+    "rules" : {
+      "react-hooks/exhaustive-deps": false
+    }
 }

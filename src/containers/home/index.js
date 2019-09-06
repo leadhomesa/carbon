@@ -1,11 +1,15 @@
-import React, { Suspense, lazy } from 'react';
+import React from 'react';
+import { Helmet } from 'react-helmet';
 
-const Home = lazy(() => import('./home'));
+// components
+import { StyledLink } from './style';
 
-const LazyHome = props => (
-  <Suspense fallback={<p>loading</p>}>
-    <Home {...props} />
-  </Suspense>
+const Home = () => (
+  <div>
+    <Helmet title='Carbon - Hello World!' />
+    <h1>Hello World!</h1>
+    <StyledLink to='/abcd'>Broken link</StyledLink>
+  </div>
 );
 
-export default LazyHome;
+export default Home;
