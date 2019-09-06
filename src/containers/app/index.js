@@ -12,7 +12,7 @@ import NotFound from 'containers/not-found';
 import Health from 'containers/health';
 
 // containers
-const Home = lazy(() => retry(import('containers/home')));
+const Home = lazy(() => retry(() => import('containers/home')));
 
 const GlobalStyle = createGlobalStyle`
   * {
