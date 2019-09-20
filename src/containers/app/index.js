@@ -1,5 +1,6 @@
 import React, { Fragment, lazy, Suspense } from 'react';
-import styled, { createGlobalStyle } from 'styled-components';
+import { styled } from 'linaria/react';
+import { css } from 'linaria';
 import { Switch, Route } from 'react-router-dom';
 import { breakpoints } from 'styles/index';
 
@@ -14,17 +15,20 @@ import Health from 'containers/health';
 // containers
 const Home = lazy(() => retry(() => import('containers/home')));
 
-const GlobalStyle = createGlobalStyle`
-  * {
-    box-sizing: border-box;
-  }
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Source Sans Pro', sans-serif;
-    /* Native apps doesn't allow text selection, so mobile PWAs shouldn't. */
-    user-select: none;
-    -webkit-tap-highlight-color: transparent;
+// eslint-disable-next-line no-unused-vars
+const GlobalStyle = css`
+  :global() {
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Source Sans Pro', sans-serif;
+      /* Native apps doesn't allow text selection, so mobile PWAs shouldn't. */
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
   }
 `;
 
@@ -40,7 +44,6 @@ const Container = styled.div`
 
 const App = () => (
   <Fragment>
-    <GlobalStyle />
     <Nav />
     <Container>
       <Suspense fallback={<p>loading</p>}>

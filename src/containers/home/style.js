@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import { styled } from 'linaria/react';
 import { Link } from 'react-router-dom';
 import { colors } from 'styles/index';
 
