@@ -36,13 +36,13 @@
     "babel-loader": "^8.0.6",
     "babel-plugin-styled-components": "^1.10.6",
     "copy-webpack-plugin": "^5.0.4",
-    "dotenv": "^8.0.0",
+    "dotenv": "^8.2.0",
     "file-loader": "^4.2.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "prop-types": "^15.7.2",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
     "react-helmet": "^5.2.1",
     "react-router-dom": "^5.0.1",
     "react-snap": "^1.23.0",
@@ -54,17 +54,16 @@
   },
   "devDependencies": {
     "@leadhome/eslint-config": "latest",
-    "babel-eslint": "^10.0.2",
-    "husky": "^3.0.3",
+    "babel-eslint": "^10.0.3",
+    "husky": "^3.0.9",
     "prettier": "^1.18.0",
-    "webpack-dev-server": "^3.8.0"
+    "webpack-dev-server": "^3.8.2"
   },
   "reactSnap": {
     "publicPath": "/",
     "puppeteerArgs": [
       "--disable-setuid-sandbox",
       "--no-sandbox"
-    ],
-    "puppeteerExecutablePath": "/usr/bin/chromium-browser"
+    ]
   }
 }
