@@ -1,10 +1,11 @@
-FROM leadhome/react-snap-base-image:1 as build
+FROM leadhome/carbon-base:latest as build
+USER root
+WORKDIR /app
+
 ENV NODE_ENV=production
 ARG VERSION=0.0.0
 ENV VERSION=${VERSION}
 
-USER root
-WORKDIR /app
 ADD package*.json ./
 RUN npm install
 ADD . ./
