@@ -8,10 +8,8 @@ A super simple React boilerplate.
 - Webpack 4
 - Styled Components
 - HMR
-- ESLint
-- Prettier
+- ESLint + Prettier
 - PWA ready
-- Pre-rendered HTML for production builds (No SSR -- Controversial, we know)
 
 ## Getting Started
 ```
@@ -34,7 +32,6 @@ npm start
 
 ## Production build
 - Set NODE_ENV=production to enable the service worker.
-- This also uses Chromium to pre-render the entire React app and allows the client to be Hydrated (as if it were rendered using SSR).
 ```
 npm run build
 OR
