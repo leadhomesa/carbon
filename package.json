@@ -46,7 +46,7 @@
     "react-router-dom": "^5.1.2",
     "rimraf": "^3.0.0",
     "styled-components": "^4.4.1",
-    "webpack": "4.41.2",
+    "webpack": "4.41.3",
     "webpack-cli": "^3.3.10",
     "workbox-webpack-plugin": "^4.3.1"
   },
