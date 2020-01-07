@@ -2,9 +2,6 @@
     "extends": "@leadhome/eslint-config",
     "settings": {
       "import/resolver": {
-        "webpack": {
-          "config": "./webpack/config.js"
-        },
         "node": {
           "paths": [
             "node_modules",

@@ -1,4 +1,4 @@
-import React, { Fragment, lazy, Suspense } from 'react';
+import React, { lazy, Suspense } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 import { Switch, Route } from 'react-router-dom';
 import { breakpoints } from 'styles/index';
@@ -39,7 +39,7 @@ const Container = styled.div`
 `;
 
 const App = () => (
-  <Fragment>
+  <>
     <GlobalStyle />
     <Nav />
     <Container>
@@ -51,7 +51,7 @@ const App = () => (
         </Switch>
       </Suspense>
     </Container>
-  </Fragment>
+  </>
 );
 
 export default App;
