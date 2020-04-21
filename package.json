@@ -54,7 +54,7 @@
     "@leadhome/eslint-config": "latest",
     "babel-eslint": "^10.0.3",
     "husky": "^4.2.0",
-    "prettier": "^1.19.1",
+    "prettier": "^2.0.5",
     "webpack-dev-server": "^3.10.1"
   }
 }
